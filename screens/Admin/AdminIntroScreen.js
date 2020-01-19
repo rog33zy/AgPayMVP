@@ -9,7 +9,7 @@ import Card from "../../components/UI/Card";
 
 import { useSelector, useDispatch } from "react-redux";
 
-import { requestPayment } from "../../store/actions/disbursements";
+import { disbursePayment } from "../../store/actions/disbursements";
 
 import { fetchCurrentUserAction } from "../../store/actions/auth";
 
@@ -26,7 +26,7 @@ const AdminIntroScreen = props => {
   const disburseHandler = () => {
     let i;
     for (i = 0; i < allDealers.length; i++) {
-      dispatch(requestPayment(allDealers[i].phoneNumber));
+      dispatch(disbursePayment(allDealers[i].phoneNumber, "500"));
     }
   };
 
